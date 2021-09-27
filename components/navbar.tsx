@@ -1,6 +1,5 @@
 import Link from "next/link";
 import React from "react";
-import { FaTimes } from "react-icons/fa";
 import styled from "styled-components";
 
 const Navbar = (): JSX.Element => (

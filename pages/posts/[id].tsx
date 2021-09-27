@@ -1,6 +1,5 @@
-import type { InferGetStaticPropsType, NextPage } from "next";
+import type { InferGetStaticPropsType } from "next";
 import Head from "next/head";
-import Image from "next/image";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import styled from "styled-components";
@@ -32,7 +31,6 @@ const Home = ({
   post,
 }: InferGetStaticPropsType<typeof getServerSideProps>): JSX.Element => {
   const router = useRouter();
-  const { id } = router.query;
 
   const [title, setTitle] = useState(post.title);
   const [body, setBody] = useState(post.body);

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import Navbar from "./navbar";
 
@@ -11,7 +11,6 @@ const Layout = ({ children }: LayoutProps): JSX.Element => {
     <Div>
       <Navbar />
       {children}
-      {/* FOOTER */}
     </Div>
   );
 };
