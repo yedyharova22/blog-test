@@ -11,6 +11,7 @@ const Navbar = (): JSX.Element => (
           <A>Home</A>
         </Link>
       </Li>
+      <Brand>My blog</Brand>
       <Li>
         <Link passHref href="/posts/new">
           <A>Create</A>
@@ -29,11 +30,19 @@ const Nav = styled.nav`
 const Ul = styled.ul`
   display: flex;
   padding: 0;
+  align-items: center;
 `;
 
 const Li = styled.li`
   display: block;
   padding: 0.4em;
+`;
+
+const Brand = styled.li`
+  display: block;
+  padding: 0.4em;
+  font-weight: 700;
+  font-size: 30px;
 `;
 
 const A = styled.a`

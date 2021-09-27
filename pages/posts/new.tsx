@@ -1,7 +1,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import { useRouter } from "next/router";
-import Image from "next/image";
 import { useState } from "react";
 import Layout from "../../components/layout";
 import styles from "/styles/Home.module.css";
@@ -26,7 +25,6 @@ const Home: NextPage = () => {
       },
     });
     const data = response.json();
-    console.log(data);
 
     setBody("");
     setTitle("");
@@ -36,7 +34,7 @@ const Home: NextPage = () => {
 
   return (
     <Layout>
-      <div className={styles.container}>
+      <div>
         <Head>
           <title>NEW POST - My blog</title>
           <link rel="icon" href="/favicon.ico" />
@@ -54,13 +52,24 @@ const Home: NextPage = () => {
             value={body}
             onChange={(e) => setBody(e.target.value)}
           />
-          <button onClick={fetchPost}>Submit</button>
-          <button onClick={() => router.push("/")}>Canсel</button>
+          <Div>
+            <Button onClick={fetchPost}>Submit</Button>
+            <Button onClick={() => router.push("/")}>Canсel</Button>
+          </Div>
         </Main>
       </div>
     </Layout>
   );
 };
+
+const Div = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+`;
 
 const Main = styled.main`
   display: flex;
@@ -93,9 +102,61 @@ const Text = styled.textarea`
   background: none;
   font-size: 24px;
   font-weight: 300;
-  min-height: 80%;
+  min-height: 500px;
   width: 100%;
   text-align: justify;
+`;
+
+const Button = styled.button`
+  width: 130px;
+  height: 40px;
+  padding: 10px 25px;
+  border: 2px solid #000;
+  font-family: "Lato", sans-serif;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+
+  background: #000;
+  color: #fff;
+  line-height: 42px;
+  padding: 0;
+  border: none;
+  z-index: 1;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+
+  :hover {
+    background: transparent;
+    color: #000;
+  }
+  :before,
+  :after {
+    position: absolute;
+    content: "";
+    left: 0;
+    width: 100%;
+    height: 50%;
+    right: 0;
+    z-index: -1;
+    background: #000;
+    transition: all 0.3s ease;
+  }
+
+  :before {
+    top: 0;
+  }
+  :after {
+    bottom: 0;
+  }
+  :hover:before,
+  :hover:after {
+    height: 0;
+    background-color: #000;
+  }
 `;
 
 export default Home;

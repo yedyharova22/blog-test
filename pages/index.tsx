@@ -62,6 +62,8 @@ const Main = styled.main`
 
 const Post = styled.div`
   border: solid;
+  background-color: #3b383d;
+  color: white;
   width: 300px;
   height: 300px;
   display: flex;
@@ -78,10 +80,11 @@ const Post = styled.div`
   word-wrap: break-word;
   overflow-y: auto;
   cursor: pointer;
+  border-radius: 20px;
 `;
 
 const H2 = styled.h2`
-  border-bottom: 0.1rem solid darkgrey;
+  border-bottom: 0.1rem solid white;
   width: 250px;
   overflow: hidden;
   text-overflow: ellipsis;
